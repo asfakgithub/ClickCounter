@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="Counter.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Clicker Game</h1>
+        </div>
+        <div class="game-content">
+            <button id="click-button">Click me!</button>
+            <div class="game-stats">
+                <div class="stat">
+                    <p>Clicks:</p>
+                    <p id="click-counter">0</div>
+                <div class="stat">
+                    <p>Time remaining:</p>
+                    <p id="timer"></p>
+                </div>
+            </div>
+        </div>
+        <div class="game-footer">
+            <button id="reset-button">Reset Game</button>
+        </div>
+    </div>
+    <audio id="click-sound" src="click.mp3"></audio>
+    <script>
+    //JavaScript code here
+    let count = 0;
+let timer = 60; //time in seconds
+const button = document.getElementById("click-button");
+const counter = document.getElementById("click-counter");
+const clickSound = document.getElementById("click-sound");
+const timeCounter = document.getElementById("timer");
+const resetButton = document.getElementById("reset-button");
+let intervalId;
+let highScore = 0;
+
+// function to start the game
+function startGame() {
+    count = 0;
+    timer = 60;
+    counter.innerHTML = count;
+    timeCounter.innerHTML = timer;
+    intervalId = setInterval(() => {
+        timer--;
+        timeCounter.innerHTML = timer;
+        if (timer <= 0) {
+            clearInterval(intervalId);
+            if(count>highScore) highScore = count;
+            alert("Time is up! You got " + count + " clicks.\nHigh Score :" + highScore);
+            //create restart option
+            let restart = confirm("Do you want to play again?");
+            if (restart) {
+                startGame();
+            }
+        }
+    }, 1000);
+}
+
+//start game when page loads
+startGame();
+
+button.addEventListener("click", () => {
+    count++;
+    counter.innerHTML = count;
+    clickSound.play();
+    button.classList.add("clicked");
+    setTimeout(() => {
+        button.classList.remove("clicked");
+    }, 100);
+});
+
+resetButton.addEventListener("click",()=>{
+    clearInterval(intervalId);
+    startGame();
+})
+
+    </script>
+</body>
+</html>

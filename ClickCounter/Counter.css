@@ -1,0 +1,105 @@
+body {
+    background-color: #2d2d2d;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+ }
+ 
+ .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+ }
+ 
+ .game-header {
+    width: 100%;
+    text-align: center;
+ }
+ 
+ .game-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+ }
+ 
+ .game-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+ }
+ 
+ #click-button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #ffa000;
+    color: #2d2d2d;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #ffa000;
+    margin-right: 2rem;
+ }
+ 
+ #click-button:hover {
+    cursor: pointer;
+    background-color: #ff9100;
+    box-shadow: 0px 0px 15px #ff9100;
+ }
+ 
+ #click-button:active {
+    background-color: #ff8200;
+    box-shadow: 0px 0px 5px #ff8200;
+    transform: scale(0.95);
+ }
+ 
+ .game-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+ 
+ .stat {
+    margin: 0 2rem;
+ }
+ 
+ .stat p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+ }
+ 
+ .stat p:last-of-type {
+    font-size: 2rem;
+    font-weight: bold;
+ }
+ 
+ .game-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+ }
+ 
+ #reset-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #ffa000;
+    color: #2d2d2d;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #ffa000;
+ }
+ 
+ #reset-button:hover {
+    cursor: pointer;
+    background-color: #ff9100;
+    box-shadow: 0px 0px 15px #ff9100;
+ }
+ 
+ #reset-button:active {
+    background-color: #ff8200;
+    box-shadow: 0px 0px 5px #ff8200;
+    transform: scale(0.95);
+ }
+ 
